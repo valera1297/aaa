@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  height: 100px;
+  background-color: #222222;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.header .header__logo {
+  width: auto;
+  height: 85px;
+}
+
+.header .header__user-data{
+  color: white;
+}

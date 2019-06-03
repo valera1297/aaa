@@ -1,0 +1,41 @@
+.login {
+    width: 100%;
+    height: 100%;
+    vertical-align: center;
+}
+
+.login .login__login-form {
+    width: 300px;
+    height: 145px;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: #77868c;
+    margin: 100px auto 0;
+}
+
+.login .login__login-form div{
+    height: 60px;
+}
+
+.login .login__login-form div label{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login .login__login-form div label span{
+    font-size: 18px;
+}
+
+.login .login__login-form div label input{
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.login .login__login-form button{
+    margin: 0 0 0 100%;
+    height: 30px;
+    width: 70px;
+    transform: translateX(-100%);
+}
