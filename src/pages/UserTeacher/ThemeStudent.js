@@ -40,17 +40,17 @@ class ThemeStudent extends Component {
                 {this.props.themeStudent.map((items) => {
                         return (
                             <div key={items.id} className="themestudent_items">
-                                <span>{items.themeShort}</span>
-                                <span>{items.themeFull}</span>
+                                <span>Тема: {items.themeShort}</span>
+                                <span>Описание: {items.themeFull}</span>
                                 {items.resume ? (
                                         <a href={'http://localhost:8000' + items.resume} download target='_blank'>
-                                            <span>{items.student_first_name + " " + items.student_patronymic + " " + items.student_last_name + " " + items.student_group}</span>
+                                            <span>Студент: {items.student_first_name + " " + items.student_patronymic + " " + items.student_last_name + " " + items.student_group}</span>
                                         </a>)
                                     :
-                                    <span>{items.student_first_name + " " + items.student_patronymic + " " + items.student_last_name + " " + items.student_group}</span>
+                                    <span>Студент: {items.student_first_name + " " + items.student_patronymic + " " + items.student_last_name + " " + items.student_group}</span>
                                 }
-                                <span>{items.noteTheme}</span>
-                                <span>{items.assessmentTeacher}</span>
+                                <span>Описание сткдента: {items.noteTheme}</span>
+                                <span>Текущая оценка: {items.assessmentTeacher}</span>
                                 <Modal id={items.id}/>
                             </div>
                         )

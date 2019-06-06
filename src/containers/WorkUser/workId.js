@@ -23,10 +23,10 @@ class WorkId extends Component {
                 <div>
                     {workid.map(techer => <div key={techer.id}>
                         {techer.theme.map((items => !items.executor ? <div key={items.id} className="items-workid">
-                            <span>{items.shortDescription}</span>
-                            <span>{items.fullDescription}</span>
-                            <span>{techer.first_name + " " + techer.patronymic + " " + techer.last_name}</span>
-                            <span>{items.assessmentStudent}</span>
+                            <span>Тема: {items.shortDescription}</span>
+                            <span>Описание: {items.fullDescription}</span>
+                            <span>Преподаватель: {techer.first_name + " " + techer.patronymic + " " + techer.last_name}</span>
+                            <span>Текущая оценка темы: {items.assessmentStudent}</span>
                             <Modal id={items.id} assement={this.props.assement} WorkId={this.props.id}/>
                         </div> : ''))}
                     </div>)}

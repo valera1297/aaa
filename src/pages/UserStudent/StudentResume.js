@@ -39,6 +39,7 @@ class Resune extends Component {
                 {this.props.resume.resume && <a href={'http://localhost:8000' + this.props.resume.resume} download target='_blank'>
                     <span>текущие резюме</span>
                  </a>}
+                 <p/>
                  <button onClick={this.toggleModal}>Загрузить резюме</button>
                 <Modal open={this.state.openModal}
                        onClose={this.toggleModal}
