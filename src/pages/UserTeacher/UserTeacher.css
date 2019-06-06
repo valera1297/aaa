@@ -7,6 +7,8 @@
     left: 20px;
     border-radius: 20px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .nav-bar span{
@@ -58,4 +60,10 @@
 
 .btn-add-theme {
     margin-top: 10px;
+}
+
+.themestudent_items {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
 }

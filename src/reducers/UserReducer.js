@@ -5,6 +5,7 @@ import {
 const initialState = {
     login: false,
     userData: {isTeacher:false},
+    resume: false,
 }
 
 export function UserReducer(state = initialState, action) {
@@ -14,6 +15,8 @@ export function UserReducer(state = initialState, action) {
             break;
         case "LOGOUT":
             return {...state, ...initialState}
+        case "GET_RESUME_SUCCESS":
+            return{...state, resume: action.payload}
 
         default:
             return state;

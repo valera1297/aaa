@@ -6,6 +6,7 @@ import {
 const initialState = {
     work: [],
     workid: '',
+    themeStudent: [],
 }
 
 export function WorkTeacherReducer(state = initialState, action) {
@@ -15,6 +16,9 @@ export function WorkTeacherReducer(state = initialState, action) {
             break;
         case GET_WORK_ID_SUCCESS:
             return {...state, workid: action.payload}
+            break;
+        case "GET_THEME_STUDENT_SUCCESS":
+            return {...state, themeStudent: action.payload}
             break;
         default:
             return state;

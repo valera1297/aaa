@@ -20,11 +20,15 @@ import {
     getWorkIdSaga,
     setPlaceSaga,
     addThemeSaga,
+    getThemeStudentSaga,
+    assementTeacherSaga
 } from "./WorkWorkerSaga"
 import {
     getWorkStudentSaga,
     getWorkIdStudentSaga,
-    assementStudentSaga
+    assementStudentSaga,
+    resumeGetSaga,
+    resumePostSaga
 } from "./WorkerStudentSaga"
 
 export function* WatcherSaga() {
@@ -39,7 +43,11 @@ export function* WatcherSaga() {
             takeEvery("LOGOUT", logoutSaga),
             takeEvery("GET_WORK_STUDENTS", getWorkStudentSaga),
             takeEvery("GET_WORK_ID_STUDENT", getWorkIdStudentSaga),
-            takeEvery("STUDENT_ASSEMENT", assementStudentSaga)
+            takeEvery("STUDENT_ASSEMENT", assementStudentSaga),
+            takeEvery("GET_RESUME", resumeGetSaga),
+            takeEvery("POST_RESUME", resumePostSaga),
+            takeEvery("GET_THEME_STUDENT", getThemeStudentSaga),
+            takeEvery("TEACHER_ASSEMENT", assementTeacherSaga),
         ])
     } catch (e) {
         console.log(e)

@@ -61,7 +61,7 @@ class WorkId extends Component {
                         {workid.map(items => <div key={items.id} className="items-workid">
                             <span>{items.shortDescription}</span>
                             <span>{items.fullDescription}</span>
-                            {items.executor && <span>items.executor</span>}
+                            {items.executor && <span>{items.executor}</span>}
                         </div>)}
                         <button onClick={this.openModal} className="btn-add-theme">Дбавить тему</button>
                         <Modal

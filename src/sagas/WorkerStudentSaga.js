@@ -57,3 +57,45 @@ export function* assementStudentSaga(action) {
 
     }
 }
+
+export function* resumePostSaga(action) {
+    try {
+
+        const head = {
+            headers: {
+                'Authorization':
+                    'Token ' + JSON.parse(localStorage.getItem("token")),
+                'Content-Type':
+                    'multipart/form-data'
+            }
+        }
+
+        yield call(() => axios.post(rootUrl + 'resume/', action.payload, head));
+        alert(action.payload)
+        yield put({type: "GET_RESUME"})
+
+    } catch
+        (e) {
+
+    }
+}
+
+export function* resumeGetSaga(action) {
+    try {
+
+        const head = {
+            headers: {
+                'Authorization':
+                    'Token ' + JSON.parse(localStorage.getItem("token")),
+            }
+        }
+
+        const resume = yield call(() => axios.get(rootUrl + 'resume/', head)
+            .then(response => response.data));
+        yield put({type: "GET_RESUME_SUCCESS", payload: resume})
+
+    } catch
+        (e) {
+
+    }
+}

@@ -81,3 +81,41 @@ export function *addThemeSaga(action) {
 
     }
 }
+
+export function *getThemeStudentSaga(action) {
+    try {
+        const theme = yield call(() => {
+            const head = {
+                headers: {
+                    Authorization: `Token ${JSON.parse(localStorage.getItem('token'))}`
+                }
+            }
+            return axios.get(rootUrl+'teacherstudent/', head)
+                .then(response => response.data)
+        })
+        yield put({type: "GET_THEME_STUDENT_SUCCESS", payload: theme})
+
+    }
+    catch (e) {
+
+    }
+}
+
+export function* assementTeacherSaga(action) {
+    try {
+        console.log(action)
+        yield call(() => {
+            const head = {
+                headers: {
+                    Authorization: `Token ${JSON.parse(localStorage.getItem('token'))}`
+                }
+            }
+            return axios.post(rootUrl + 'assessmentteacher/', action.payload, head)
+                .then(response => response.data)
+        })
+        yield put({type: "GET_THEME_STUDENT"})
+
+    } catch (e) {
+
+    }
+}
